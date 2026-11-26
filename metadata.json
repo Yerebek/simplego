@@ -1,0 +1,8 @@
+{
+  "name": "SimplyGo",
+  "description": "Your one-stop platform for transit and travel card services, concession passes, motoring, and online fare claims.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

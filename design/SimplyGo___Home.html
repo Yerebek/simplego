@@ -1,0 +1,681 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimplyGo - Simplifying Journeys, Creating Value</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="f7e0862b32bd1f62===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'brand-purple': '#7B2CBF',
+        'brand-magenta': '#C9184A',
+        'footer-bg': '#132334',
+        'on-footer-bg': '#FFFFFF',
+        'on-footer-muted': '#C5C6CC',
+        'light-primary': '#1860A6',
+        'light-on-primary': '#FFFFFF',
+        'light-primary-container': '#D4E3FF',
+        'light-on-primary-container': '#001C39',
+        'light-secondary': '#344863',
+        'light-on-secondary': '#FFFFFF',
+        'light-secondary-container': '#EBF2F9',
+        'light-on-secondary-container': '#1D314C',
+        'light-surface': '#FFFFFF',
+        'light-on-surface': '#212529',
+        'light-on-surface-variant': '#5C5E64',
+        'light-surface-container-low': '#EBF2F9',
+        'light-surface-container': '#F4F7FB',
+        'light-surface-container-high': '#DEE2EF',
+        'light-outline': '#8C919C',
+        'light-outline-variant': '#E1E2E9',
+        'light-error': '#BA1A1A',
+        'light-on-error': '#FFFFFF',
+      },
+      borderRadius: {
+        'sm': '4px',
+        'DEFAULT': '6px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '64px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Montserrat"', 'sans-serif'],
+        'headline': ['"Montserrat"', 'sans-serif'],
+        'title': ['"Montserrat"', 'sans-serif'],
+        'body': ['"Montserrat"', 'sans-serif'],
+        'label': ['"Montserrat"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['36px', { lineHeight: '44px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'display-lg-mobile': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg': ['33px', { lineHeight: '42px', letterSpacing: '-0.25px', fontWeight: '700' }],
+        'headline-lg-mobile': ['26px', { lineHeight: '34px', letterSpacing: '-0.2px', fontWeight: '700' }],
+        'headline-md': ['24px', { lineHeight: '32px', letterSpacing: '0px', fontWeight: '700' }],
+        'title-lg': ['18px', { lineHeight: '26px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['15px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '18px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.1px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.2px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'surface-enter': '250ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-light-surface text-light-on-surface font-body antialiased min-h-screen flex flex-col">
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 bg-light-surface border-b border-light-outline-variant">
+    <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin h-16 flex items-center justify-between gap-4">
+      <!-- Brand Logo -->
+      <a href="#top" class="flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-light-primary rounded" aria-label="SimplyGo Home">
+        <span class="font-headline text-headline-md tracking-tight text-light-on-surface flex items-baseline">
+          <span class="text-light-secondary">Simply</span><span class="text-brand-purple">Go</span><span class="text-brand-magenta">.</span>
+        </span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav aria-label="Primary navigation" class="hidden lg:flex items-center gap-6">
+        <a href="#about" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">About Us</a>
+        <a href="#locations" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Locations</a>
+        <a href="#products" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Products &amp; Services</a>
+        <a href="#travel-info" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Travel Information</a>
+        <a href="#online-services" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Online Services</a>
+        <a href="#campaigns" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Campaigns</a>
+        <a href="#contact" class="font-label text-label-md text-light-on-surface hover:text-light-primary transition-colors duration-state-change whitespace-nowrap" data-design-text-token="label-md">Contact Us</a>
+      </nav>
+
+      <!-- Utility Controls: Font Size & Search -->
+      <div class="flex items-center gap-2 shrink-0">
+        <button id="font-decrease" type="button" aria-label="Decrease text size" class="px-2 py-1 rounded font-label text-label-md text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <span data-design-text-token="label-md">A-</span>
+        </button>
+        <button id="font-increase" type="button" aria-label="Increase text size" class="px-2 py-1 rounded font-label text-label-md text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change">
+          <span data-design-text-token="label-md">A+</span>
+        </button>
+        <!-- COMPONENT: button-icon -->
+        <button data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Search site" class="inline-flex items-center justify-center w-9 h-9 rounded-full text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change ease-state-change focus-visible:outline-2 focus-visible:outline-light-primary">
+          <span class="material-symbols-outlined text-title-lg" aria-hidden="true">search</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Maintenance Notice Banner -->
+  <!-- COMPONENT: banner-dismissible -->
+  <div id="maintenance-banner" role="region" aria-label="Scheduled Maintenance Notice" data-component-id="banner-dismissible" data-component-type="banner" data-component-variant="dismissible" class="relative w-full bg-light-primary text-light-on-primary px-12 py-2.5 text-center">
+    <div class="max-w-[1140px] mx-auto flex flex-col gap-1">
+      <p class="font-body text-body-sm" data-design-text-token="body-sm">
+        Scheduled Maintenance: 27 Nov, 12AM - 6AM - To serve you better we will be conducting scheduled maintenance on 27 Nov, 12AM to 6AM. During this period, access to various e-services on the SimplyGo app, as well as Top-Up Kiosks and SimplyGo Kiosks, may be intermittent. Customers are advised to complete their transactions before the maintenance period begins. We apologise for any inconvenience caused.
+      </p>
+      <p class="font-body text-body-sm opacity-90" data-design-text-token="body-sm">
+        Due to DBS’s scheduled maintenance from 5 Nov, EZ-Link and Concession cardholders will be temporarily unable to top up their cards at DBS ATMs until further notice. We apologise for any inconvenience caused.
+      </p>
+    </div>
+    <button id="dismiss-banner-btn" type="button" aria-label="Dismiss banner" class="absolute right-4 top-3 text-light-on-primary hover:opacity-80 transition-opacity duration-state-change">
+      <span class="material-symbols-outlined text-title-lg" aria-hidden="true">close</span>
+    </button>
+  </div>
+
+  <main class="flex-1">
+    <!-- Hero Campaign Banner -->
+    <section aria-label="Featured Campaign" class="w-full bg-light-surface">
+      <div class="relative w-full overflow-hidden bg-light-surface-container-low">
+        <div class="max-w-[1440px] mx-auto relative">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrAoNrAXoJdUseohSk-gwV08HePC7zGe3atH2eXzUi3LuPgxmVRRPMLR2O3NVoTNJnbojjxDu31IRl_YTl7ZYjBmKl29XUq5xbKF0e3K_IktXgegURWCjvgO5r6rgUYLY-ZidIarqKWviiB2N2z3AdhqB0l94hzQw4nPhUUirJh3wvXiq9ZvNjzkugzdUTdZcSMqmSW4Lvok1D1K2YMR5CxKmd6h5cYh49UY_noH0tFYFn3L8g7eoAqaCRLTrjLo" alt="Ride to Rewards with SimplyGo — Stand to win $1,000 travel credits" class="w-full h-[380px] md:h-[460px] object-cover object-left" data-stitch-original-src="70d4eac4fc5bf60d===../../images/hero_ride_to_rewards.jpg">
+          <!-- Promotional Callout Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent via-light-surface/60 to-light-surface/95 flex items-center justify-end">
+            <div class="max-w-lg w-full px-gutter-lg lg:px-gutter-xl py-6 flex flex-col items-center text-center gap-3">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-light-primary text-light-on-primary">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">directions_bus</span>
+                <span class="font-label text-label-md" data-design-text-token="label-md">RIDE TO REWARDS • 1 NOV 2026 - 31 MAR 2027</span>
+              </div>
+
+              <h1 class="font-display text-display-lg-mobile md:text-display-lg text-light-primary text-balance" data-design-text-token="display-lg">
+                STAND TO WIN $1,000 TRAVEL CREDITS
+              </h1>
+
+              <div class="w-full bg-light-surface border border-light-outline-variant rounded-md p-3 shadow-sm flex flex-col gap-1">
+                <p class="font-label text-label-lg text-light-primary" data-design-text-token="label-lg">
+                  GET CASHBACK FOR YOUR TOP-UPS!
+                </p>
+                <p class="font-body text-body-sm text-light-on-surface" data-design-text-token="body-sm">
+                  Top up via the SimplyGo App and get $0.50 cashback!* Exclusively for SimplyGo Concession cardholders.
+                </p>
+              </div>
+
+              <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">
+                *Capped at $2 per card per month over the campaign period. Terms &amp; conditions apply.
+              </p>
+
+              <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
+                <a href="#download-app" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-footer-bg text-on-footer-bg font-label text-label-md hover:bg-light-secondary transition-colors duration-state-change">
+                  <span class="material-symbols-outlined text-title-md" aria-hidden="true">play_arrow</span>
+                  <span data-design-text-token="label-md">Google Play</span>
+                </a>
+                <a href="#download-app" class="inline-flex items-center gap-2 px-4 py-2 rounded bg-footer-bg text-on-footer-bg font-label text-label-md hover:bg-light-secondary transition-colors duration-state-change">
+                  <span class="material-symbols-outlined text-title-md" aria-hidden="true">phone_iphone</span>
+                  <span data-design-text-token="label-md">App Store</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel Pagination & Floating Assistant Row -->
+      <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin py-4 flex items-center justify-between">
+        <div class="flex items-center gap-2.5" role="tablist" aria-label="Campaign slides">
+          <button type="button" aria-label="Slide 1" aria-selected="true" class="w-2.5 h-2.5 rounded-full bg-light-on-surface"></button>
+          <button type="button" aria-label="Slide 2" aria-selected="false" class="w-2.5 h-2.5 rounded-full bg-light-surface-container-high hover:bg-light-outline"></button>
+          <button type="button" aria-label="Slide 3" aria-selected="false" class="w-2.5 h-2.5 rounded-full bg-light-surface-container-high hover:bg-light-outline"></button>
+          <button type="button" aria-label="Slide 4" aria-selected="false" class="w-2.5 h-2.5 rounded-full bg-light-surface-container-high hover:bg-light-outline"></button>
+          <button type="button" aria-label="Slide 5" aria-selected="false" class="w-2.5 h-2.5 rounded-full bg-light-surface-container-high hover:bg-light-outline"></button>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button type="button" aria-label="Next slide" class="inline-flex items-center justify-center w-8 h-8 rounded-full text-light-on-surface hover:bg-light-surface-container-low transition-colors duration-state-change">
+            <span class="material-symbols-outlined text-title-lg" aria-hidden="true">arrow_back</span>
+          </button>
+          <button type="button" aria-label="Open SimplyGo Virtual Assistant" class="w-11 h-11 rounded-full bg-light-surface border-2 border-brand-purple shadow-md flex items-center justify-center text-light-primary hover:scale-105 transition-transform duration-state-change">
+            <span class="material-symbols-outlined text-headline-md text-brand-purple" aria-hidden="true">smart_toy</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Your One-Stop Platform -->
+    <section id="products" class="w-full bg-light-surface py-14 lg:py-section">
+      <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin">
+        <div class="text-center max-w-2xl mx-auto mb-12 flex flex-col gap-2">
+          <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface text-balance" data-design-text-token="headline-lg">
+            Your One-Stop Platform
+          </h2>
+          <p class="font-body text-body-md text-light-on-surface-variant text-pretty" data-design-text-token="body-md">
+            for all transit and travel card-related services
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-lg items-stretch">
+          <!-- COMPONENT: card-interactive -->
+          <a href="#ezlink" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-36 rounded-md overflow-hidden flex items-center justify-center bg-light-surface">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrBdI4tR2gZAzhKStd-6wdO23iO8IE9AgwBRnmFMc-9p6D2QB43Lybel0h3-V2dK_8m7I1ZiXLVOctpsRguETQT0KUxzYhc9HX4X8prOmqF_xIqN8McsUUi8tkl9hY7qlY_MEUbqamPZghqFCQ6tUwWOHPPIZBijr49AWRgLGPglIZdaXtnXIh6hmHMQS7hGy_anYFyGdk6HsnAFbXVEdZW7ooBlmw0ISPcHm0W3n2_1B2HPDDnM" alt="EZ-Link and SimplyGo EZ-Link Cards" class="w-full h-full object-contain" data-stitch-original-src="1a32f5f8ef6134d4===../../images/card_ezlink.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              EZ-Link &amp; SimplyGo EZ-Link Cards
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#concession" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-36 rounded-md overflow-hidden flex items-center justify-center bg-light-surface">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCA9kVx18Yh1nTax6OUbbojEssfXyS7gPjUZUDL4XTaUIJBEx8lL4qBVPfktlEgc4-V3hK-Nylp32TntTfXW7-_d8QhGYAw3zb0KqZ6vSISVImXj6lzmqNTRYKkmERF4J4ev3utu-YcFnoTjuYB3L25-g8Yd7fUTdKm0u9hoX4uj4WaD9MoI9qzYwjpN45k2yd0cDHD7J1JRG1UG55Efovi-qQr9KpTdNilFasuMgMKzbgnGZA0-_A4I1Q" alt="Concession and Monthly Travel Cards" class="w-full h-full object-contain" data-stitch-original-src="fec0a1e6a7f5433f===../../images/card_concession.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              Concession &amp; Monthly Travel Cards
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#motoring" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-36 rounded-md overflow-hidden flex items-center justify-center bg-light-surface">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDD4TGk0pzH1yOCAMjPv3f0R8iDD2QnAtNZUJLk_4B9-ndDBTlinq6gftfPAOpMAmhHvripH-xJNsNWYe3XrF_RofckzoLk5UNp7e5op9UFz_DmTSulEvY91wLoFM9zkhkiQPIqh1xK3rriPjx8NeMpc1AzY_2K_zmlQ0AkN8V2WDki8FBwBEBLAxP0jygCtN3dY5RygXsN22ZnnotRleVuXnCkhUG8xPTHhd8KaQeOV-NwsYdVKyI" alt="EZ-Link Motoring" class="w-full h-full object-contain" data-stitch-original-src="f3b6d1cef6ee7942===../../images/card_motoring.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              EZ-Link Motoring
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#online-services" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-36 rounded-md overflow-hidden flex items-center justify-center bg-light-surface">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrB91Rd--we1idQpSXakYK9PslMKl4wGjCpTlVK1rADbDJAoxTSDrb8As5Et_ACKzDEFkUbjg4ziCGtWN0zcsZBR-Gsr8XPRgPetRRLWaZqqdavrPjEYAwT3mRFTAnIaqV-n3AUV42Y9gazoi5Ai7ttfmMGfLQ_-Ydmeeyj7cbK-o_2QVOxtEGHoND5qvFJNVNw3kitF7CTqvUMu2fyLP_rTeLNLLHtHDCQdPXnbbTw6oU0vbThjRWBIAhF-rjBmEw" alt="Online Services" class="w-full h-full object-contain" data-stitch-original-src="07b4c2f3755755cc===../../images/card_online_services.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              Online Services
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Download the SimplyGo App -->
+    <section id="download-app" class="w-full bg-light-surface-container-low py-14 lg:py-section">
+      <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-center">
+          <!-- Phone Mockup -->
+          <div class="lg:col-span-5 flex justify-center">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDQZ4_RXp5XjzFs-bUF-SehWrIp_HGVoCtrzsXq8J-VcasS2UL_V4j1dO-_Xqi6WF-E3SVEx2VFwEfG3JTmzqnhq9WEXtGYDvrY1Gy0x2GSrXCkzkm8FTe6YFffo7ilz9-e4GrsJvogE1RHaQm9wte11qSYXKBKclNdKwEIn0SLsEfaVRDWer4TsbTWhrxa-9Ak-X2ZJ9hRv4p7xlWREB4Zt50GUmNQUHodypkSMona2zM60OKFRS7IR54" alt="Hand holding smartphone displaying the SimplyGo mobile app" class="w-72 md:w-80 rounded-xl object-cover" data-stitch-original-src="c41093c5c644efa8===../../images/app_hand_mockup.jpg">
+          </div>
+
+          <!-- App Description & Store Badges -->
+          <div class="lg:col-span-7 flex flex-col gap-5 max-w-prose">
+            <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface text-balance" data-design-text-token="headline-lg">
+              Download the SimplyGo App for a smoother journey
+            </h2>
+            <p class="font-body text-body-md text-light-on-surface-variant text-pretty" data-design-text-token="body-md">
+              With a registered SimplyGo account, add your bank cards and SimplyGo EZ-Link cards onto the app to track your travel expenditure and history easily. You can also perform card-related services, earn reward points, plan your transport journey and more - all on a single, user-friendly mobile platform.
+            </p>
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <a href="#google-play" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded bg-footer-bg text-on-footer-bg hover:bg-light-secondary transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-headline-md" aria-hidden="true">play_arrow</span>
+                <div class="flex flex-col text-left">
+                  <span class="font-label text-label-sm opacity-80" data-design-text-token="label-sm">GET IT ON</span>
+                  <span class="font-label text-label-lg" data-design-text-token="label-lg">Google Play</span>
+                </div>
+              </a>
+              <a href="#app-store" class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded bg-footer-bg text-on-footer-bg hover:bg-light-secondary transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-headline-md" aria-hidden="true">phone_iphone</span>
+                <div class="flex flex-col text-left">
+                  <span class="font-label text-label-sm opacity-80" data-design-text-token="label-sm">Download on the</span>
+                  <span class="font-label text-label-lg" data-design-text-token="label-lg">App Store</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Key App Features -->
+    <section id="app-features" class="w-full bg-light-surface py-14 lg:py-section">
+      <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-xl items-start">
+          <!-- Left Column: Accordion -->
+          <div class="lg:col-span-6 flex flex-col gap-6">
+            <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface" data-design-text-token="headline-lg">
+              Key App Features
+            </h2>
+
+            <!-- COMPONENT: accordion-group -->
+            <div data-component-id="accordion-group" data-component-type="accordion" data-component-variant="group" class="divide-y divide-light-outline-variant border-b border-light-outline-variant">
+              <details name="key-features" class="group py-4" open>
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-primary" aria-hidden="true">location_on</span>
+                    <span data-design-text-token="title-md">View Transactions</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Check your card balance and view payment transactions
+                  </p>
+                </div>
+              </details>
+
+              <details name="key-features" class="group py-4">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-secondary" aria-hidden="true">autorenew</span>
+                    <span data-design-text-token="title-md">Auto Top-up</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Link your credit or debit card for seamless automatic top-ups whenever your balance runs low.
+                  </p>
+                </div>
+              </details>
+
+              <details name="key-features" class="group py-4">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-secondary" aria-hidden="true">directions_car</span>
+                    <span data-design-text-token="title-md">Motoring Service</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Manage ERP and carpark payments with EZ-Link Motoring directly from your phone.
+                  </p>
+                </div>
+              </details>
+
+              <details name="key-features" class="group py-4">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-secondary" aria-hidden="true">badge</span>
+                    <span data-design-text-token="title-md">Concession Card Services</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Apply for concession cards, purchase monthly travel passes, and check card validity.
+                  </p>
+                </div>
+              </details>
+
+              <details name="key-features" class="group py-4">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-secondary" aria-hidden="true">receipt_long</span>
+                    <span data-design-text-token="title-md">Travel Claims</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Submit fare adjustment claims and track claim statuses in real time.
+                  </p>
+                </div>
+              </details>
+
+              <details name="key-features" class="group py-4">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-title text-title-md text-light-on-surface group-open:text-light-primary">
+                  <span class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-title-lg text-light-secondary" aria-hidden="true">verified_user</span>
+                    <span data-design-text-token="title-md">MyInfo Verification</span>
+                  </span>
+                  <span class="material-symbols-outlined text-title-lg text-light-on-surface-variant group-open:hidden" aria-hidden="true">add</span>
+                  <span class="material-symbols-outlined text-title-lg text-light-primary hidden group-open:inline-block" aria-hidden="true">remove</span>
+                </summary>
+                <div class="pt-3 pl-8">
+                  <p class="font-body text-body-md text-light-on-surface-variant" data-design-text-token="body-md">
+                    Verify your identity securely with Singpass MyInfo for faster card applications.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive App Screen Preview -->
+          <div class="lg:col-span-6">
+            <div class="relative rounded-xl bg-gradient-to-br from-light-primary via-light-secondary to-brand-purple p-6 md:p-8 flex flex-col items-center justify-center overflow-hidden">
+              <!-- Phone Card Frame -->
+              <div class="w-full max-w-sm bg-light-surface rounded-xl p-6 shadow-xl flex flex-col items-center gap-4">
+                <div class="w-16 h-10 rounded bg-light-primary-container border border-light-outline-variant flex items-center justify-center">
+                  <span class="material-symbols-outlined text-title-lg text-light-primary" aria-hidden="true">credit_card</span>
+                </div>
+                <div class="text-center">
+                  <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Available Balance</p>
+                  <p class="font-display text-display-lg text-light-on-surface tabular-nums" data-design-text-token="display-lg">$ 24.00</p>
+                </div>
+                <span class="px-4 py-1.5 rounded-full bg-light-secondary text-light-on-secondary font-label text-label-md" data-design-text-token="label-md">
+                  Buy Concession Pass ›
+                </span>
+                <div class="grid grid-cols-2 gap-6 pt-2 w-full max-w-[220px]">
+                  <div class="flex flex-col items-center gap-1">
+                    <span class="w-10 h-10 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+                      <span class="material-symbols-outlined text-title-lg" aria-hidden="true">account_balance_wallet</span>
+                    </span>
+                    <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Top-up</span>
+                  </div>
+                  <div class="flex flex-col items-center gap-1">
+                    <span class="w-10 h-10 rounded-full bg-light-surface-container flex items-center justify-center text-light-on-surface">
+                      <span class="material-symbols-outlined text-title-lg" aria-hidden="true">autorenew</span>
+                    </span>
+                    <span class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Auto Top-up</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Elevated Transactions Overlay Card -->
+              <!-- COMPONENT: card-elevated -->
+              <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-light-surface rounded-lg p-5 shadow-lg border border-light-outline-variant w-full max-w-md -mt-6 relative z-10">
+                <header class="flex items-center justify-between mb-2">
+                  <h3 class="font-title text-title-md text-light-on-surface" data-design-text-token="title-md">Transactions</h3>
+                  <span class="font-label text-label-md text-brand-purple" data-design-text-token="label-md">View all</span>
+                </header>
+                <p class="font-body text-body-sm text-light-on-surface-variant mb-2 tabular-nums" data-design-text-token="body-sm">01-Jul-2024</p>
+                <div class="flex items-center justify-between gap-3 pt-2 border-t border-light-outline-variant">
+                  <div class="flex items-center gap-3">
+                    <span class="w-9 h-9 rounded-full bg-light-surface-container-high flex items-center justify-center text-light-on-surface shrink-0">
+                      <span class="material-symbols-outlined text-title-md" aria-hidden="true">train</span>
+                    </span>
+                    <div>
+                      <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Public Transport</p>
+                      <p class="font-title text-title-md text-light-on-surface" data-design-text-token="title-md">Train Service</p>
+                      <p class="font-body text-body-sm text-light-on-surface-variant tabular-nums" data-design-text-token="body-sm">6:17 PM - 7:05 PM</p>
+                      <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Kranji - Marina Bay</p>
+                    </div>
+                  </div>
+                  <div class="text-right tabular-nums shrink-0">
+                    <p class="font-title text-title-md text-light-on-surface" data-design-text-token="title-md">- $ 0.99</p>
+                    <p class="font-body text-body-sm text-light-on-surface-variant" data-design-text-token="body-sm">Pending</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered CTA Button -->
+        <div class="mt-12 flex justify-center">
+          <!-- COMPONENT: button-primary -->
+          <button data-component-id="button-primary" data-component-type="button" data-component-variant="primary" type="button" class="inline-flex items-center justify-center px-6 py-3 rounded bg-light-primary text-light-on-primary font-label text-label-lg transition-colors duration-state-change ease-state-change hover:bg-light-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-primary">
+            <span data-design-text-token="label-lg">View More App Features</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Looking For Assistance? -->
+    <section id="locations" class="w-full bg-light-surface-container-low py-14 lg:py-section">
+      <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin">
+        <div class="text-center max-w-xl mx-auto mb-12">
+          <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface text-balance" data-design-text-token="headline-lg">
+            Looking For Assistance?
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-lg items-stretch">
+          <!-- COMPONENT: card-interactive -->
+          <a href="#ticket-offices" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-40 rounded-md overflow-hidden flex items-center justify-center">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrBxUZfQaMTebLVpIxuIsJ2I-wKiDB6Wnqy6CNiAoI89aNUCt95lZ4XhGhn4dqSj-f9MdR_3xeThg73AeqZ6-LVVD6__yDsv9D_55esDyF4bb_f_L4vtAVZ3K7zxSlmIOVaZEGjOSslCpXo1-h2r52X1ZcyLWulYmZCm_nwDi-pSMicmX9WNCf5aEy42T8X-jzIu7S2xu2VCrCNbha2RscZG8p1Trek3wgl9RxHN0tw-tjheNnE4ueQNfOQKhQ50" alt="SimplyGo Ticket Offices" class="w-full h-full object-contain" data-stitch-original-src="d80d0d852fdb08f4===../../images/assist_ticket_office.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              SimplyGo Ticket Offices
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#ticketing-service-centres" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-40 rounded-md overflow-hidden flex items-center justify-center">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrA0I6_ePMlzGg6A9cg44BovzB5EdUuNitzUBocE25FkKyrFdgF0w-XRxKwMgvO7dGv9wt4hiDxjzG6b3cy3EkcYmiRAK9hIO8e6WynS7VxSPypEXw_4xTcOuOkxZ5MJQQCf_JyFuQwixq8s16yLTjSG5JHh3wlnvH_9mhy4L30BfKvyL0Ce4PXJT17AYnBXVE9tXvYxXIKX3XzVBFS7OINDcGALY0VqB7vHqICBW59Vdqa8Mo8gfFkpAfZeSo7YkQ" alt="SimplyGo Ticketing Service Centres" class="w-full h-full object-contain" data-stitch-original-src="73fe243f22b03e23===../../images/assist_service_centre.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              SimplyGo Ticketing Service Centres
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#self-help-machines" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-40 rounded-md overflow-hidden flex items-center justify-center">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrCiu5Rudq96lUTkmkoxk23j5i7uSOxbsgNqQ6aVwhvRZVLOzaX0urQxw2StDacphsMoe21zTP1yICTw1GTnx5YeX5MbciNQ3w89kzXiHX6KVk4fLjH2DPGbuJW4DyJduDt3O2fvw8XbHNnMs6lmh-UQ1HyAmm-pztsSqiBjoVSIWM0JhTyrAk6xgJJfjfFddcVPg1os8BWuMgvicPvRZNFQrqPmAI79Epl3r0kSi9jiaCY_fdU5dQ" alt="Self-Help Ticketing Machines" class="w-full h-full object-contain" data-stitch-original-src="da92b51c192845a7===../../images/assist_kiosk.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              Self-Help Ticketing Machines
+            </h3>
+          </a>
+
+          <!-- COMPONENT: card-interactive -->
+          <a href="#contact-centre" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group flex flex-col items-center text-center gap-4 p-4 rounded-md h-full transition-transform duration-state-change ease-state-change hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-light-primary">
+            <div class="w-full h-40 rounded-md overflow-hidden flex items-center justify-center">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrAQWMYr1jenrMVlOzoDJhx2s83CE-3WOL9j7i3863LXvGPSUzEJByPJc6-OWsjcgDPgf_ENVoRKj7G--Ny7zYuDC1v-9d_cXl8VY4BCxMChOxFonS1iv5pLV-6HzakQpk_RCSm6EzI_f3fzyiN6TBtoVMpPXTDP3USsPY4xvDqxRbvodSFKyaUxTuy5YOSJ-A9RlwYXgJQ6sz1y2sLprtk0OW4TgWgUFnDyJhwzYK7xoHvXjkpbQACfV48GNOAyGx4" alt="Contact Centre" class="w-full h-full object-contain" data-stitch-original-src="b334b4cc110cd466===../../images/assist_contact_centre.jpg">
+            </div>
+            <h3 class="font-title text-title-md text-light-on-surface group-hover:text-light-primary transition-colors duration-state-change text-balance" data-design-text-token="title-md">
+              Contact Centre
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer id="contact" class="w-full bg-footer-bg text-on-footer-bg pt-12 pb-8">
+    <div class="max-w-[1200px] mx-auto px-gutter-md lg:px-page-margin">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-gutter-xl pb-10">
+        <!-- Column 1 -->
+        <div class="lg:col-span-2 flex flex-col gap-3">
+          <a href="#about" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">About Us</a>
+          <a href="#faqs" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">FAQs</a>
+          <a href="#newsroom" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">Newsroom</a>
+          <a href="#sitemap" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">Site Map</a>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="lg:col-span-2 flex flex-col gap-3">
+          <a href="#products" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">Products &amp; Services</a>
+          <a href="#careers" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">Careers</a>
+          <a href="#campaigns" class="font-label text-label-lg text-on-footer-bg hover:underline" data-design-text-token="label-lg">Campaigns</a>
+        </div>
+
+        <!-- Column 3: Hotline & Social -->
+        <div class="lg:col-span-4 flex flex-col gap-4">
+          <div class="flex flex-col gap-1">
+            <p class="font-label text-label-lg text-on-footer-bg tabular-nums" data-design-text-token="label-lg">
+              Hotline: <span class="underline">6883 5048</span>
+            </p>
+            <p class="font-body text-body-sm italic text-on-footer-muted" data-design-text-token="body-sm">
+              (8 am - 6 pm daily, closed on public holidays)
+            </p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p class="font-label text-label-md text-on-footer-bg" data-design-text-token="label-md">Connect With Us</p>
+            <div class="flex items-center gap-3">
+              <a href="#facebook" aria-label="Facebook" class="w-8 h-8 rounded-full border border-on-footer-muted flex items-center justify-center text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">public</span>
+              </a>
+              <a href="#instagram" aria-label="Instagram" class="w-8 h-8 rounded-full border border-on-footer-muted flex items-center justify-center text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">photo_camera</span>
+              </a>
+              <a href="#tiktok" aria-label="TikTok" class="w-8 h-8 rounded-full border border-on-footer-muted flex items-center justify-center text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">music_note</span>
+              </a>
+              <a href="#whatsapp" aria-label="WhatsApp" class="w-8 h-8 rounded-full border border-on-footer-muted flex items-center justify-center text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">chat</span>
+              </a>
+              <a href="#wechat" aria-label="WeChat" class="w-8 h-8 rounded-full border border-on-footer-muted flex items-center justify-center text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+                <span class="material-symbols-outlined text-title-md" aria-hidden="true">forum</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: App Download -->
+        <div class="lg:col-span-4 flex flex-col gap-3">
+          <p class="font-label text-label-lg text-on-footer-bg" data-design-text-token="label-lg">Download SimplyGo app today</p>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <a href="#google-play" class="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-on-footer-muted text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+              <span class="material-symbols-outlined text-title-lg" aria-hidden="true">play_arrow</span>
+              <span class="font-label text-label-md" data-design-text-token="label-md">Google Play</span>
+            </a>
+            <a href="#app-store" class="inline-flex items-center gap-2 px-3 py-1.5 rounded border border-on-footer-muted text-on-footer-bg hover:border-on-footer-bg transition-colors duration-state-change">
+              <span class="material-symbols-outlined text-title-lg" aria-hidden="true">phone_iphone</span>
+              <span class="font-label text-label-md" data-design-text-token="label-md">App Store</span>
+            </a>
+          </div>
+          <p class="font-body text-body-sm text-on-footer-muted" data-design-text-token="body-sm">
+            Manage your travel cards and discover our card services at your fingertips!
+          </p>
+        </div>
+      </div>
+
+      <!-- Copyright & Legal Links -->
+      <div class="pt-6 border-t border-light-secondary flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-body text-body-sm text-on-footer-muted" data-design-text-token="body-sm">
+          © Copyright 2026 SimplyGo Pte. Ltd. All Rights Reserved.
+        </p>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="#terms" class="font-body text-body-sm text-on-footer-bg underline hover:text-on-footer-muted" data-design-text-token="body-sm">Terms and Conditions</a>
+          <span class="text-on-footer-muted" aria-hidden="true">|</span>
+          <a href="#privacy" class="font-body text-body-sm text-on-footer-bg underline hover:text-on-footer-muted" data-design-text-token="body-sm">Data Privacy Policy</a>
+          <span class="text-on-footer-muted" aria-hidden="true">|</span>
+          <a href="#whistleblowing" class="font-body text-body-sm text-on-footer-bg underline hover:text-on-footer-muted" data-design-text-token="body-sm">Whistleblowing Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var banner = document.getElementById('maintenance-banner');
+      var dismissBtn = document.getElementById('dismiss-banner-btn');
+      if (banner && dismissBtn) {
+        dismissBtn.addEventListener('click', function () {
+          banner.classList.add('hidden');
+        });
+      }
+
+      var scale = 100;
+      var decBtn = document.getElementById('font-decrease');
+      var incBtn = document.getElementById('font-increase');
+      if (decBtn) {
+        decBtn.addEventListener('click', function () {
+          scale = Math.max(85, scale - 5);
+          document.documentElement.style.fontSize = scale + '%';
+        });
+      }
+      if (incBtn) {
+        incBtn.addEventListener('click', function () {
+          scale = Math.min(120, scale + 5);
+          document.documentElement.style.fontSize = scale + '%';
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
